@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', \App\Http\Controllers\listarDiariasController::class);
+Route::get('/', \App\Http\Controllers\listarDiariasController::class)->name('index');
+
+Route::get('/diarias/{id}', \App\Http\Controllers\DetalharDIarias::class)->name('detalhes.diarias');
 
 Route::get('/contato', [\App\Http\Controllers\SiteController::class, 'contato']);
 
